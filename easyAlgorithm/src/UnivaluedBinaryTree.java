@@ -23,8 +23,8 @@ public class UnivaluedBinaryTree {
     public void dfs(TreeNode treeNode){
         if (treeNode!=null){
             vlas.add(treeNode.val);
-            dfs(treeNode.leftTree);
-            dfs(treeNode.rightTree);
+            dfs(treeNode.left);
+            dfs(treeNode.right);
         }
     }
 
@@ -32,8 +32,8 @@ public class UnivaluedBinaryTree {
 
 class TreeNode{
     int val;
-    TreeNode leftTree;
-    TreeNode rightTree;
+    TreeNode left;
+    TreeNode right;
     TreeNode(int x){
         val = x;
     }
