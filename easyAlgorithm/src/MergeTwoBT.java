@@ -13,8 +13,8 @@ public class MergeTwoBT {
             return t1;
         }
         t1.val+=t2.val;
-        t1.leftTree=this.mergeTrees(t1.leftTree,t2.rightTree);
-        t1.rightTree=this.mergeTrees(t1.rightTree,t2.rightTree);
+        t1.left=this.mergeTrees(t1.left,t2.right);
+        t1.right=this.mergeTrees(t1.right,t2.right);
 
         return t1;
     }
