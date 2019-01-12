@@ -42,7 +42,7 @@ public class StringToInteger {
             base  = 10 * base + (ch[i++] - '0');
             if (sign==1 && base>Integer.MAX_VALUE){
                 return Integer.MAX_VALUE;
-            }else if (sign==-1 && base>-Integer.MIN_VALUE){
+            }else if (sign==-1 && -base<Integer.MIN_VALUE){
                 return Integer.MIN_VALUE;
             }
         }
@@ -51,8 +51,8 @@ public class StringToInteger {
 
     public static void main(String[] args){
         StringToInteger stringToInteger = new StringToInteger();
-        String s ="2147483648 ";
-        int res= stringToInteger.myAtoi(s);
+        String s =" -42 ";
+        int res= stringToInteger.myAtoi1(s);
         System.out.println("=======res:"+res+"=======");
     }
 }
