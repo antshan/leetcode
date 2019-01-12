@@ -42,7 +42,7 @@ public class StringToInteger {
             base  = 10 * base + (ch[i++] - '0');
             if (sign==1 && base>Integer.MAX_VALUE){
                 return Integer.MAX_VALUE;
-            }else if (sign==-1 && -base<Integer.MIN_VALUE){
+            }else if (sign==-1 && sign*base<Integer.MIN_VALUE){
                 return Integer.MIN_VALUE;
             }
         }
