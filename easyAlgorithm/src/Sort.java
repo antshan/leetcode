@@ -61,13 +61,39 @@ public class Sort {
         }
     }
 
+    //插入排序
+    public void insertSort(int[] arr){
+
+        for (int i=1;i<arr.length;i++){
+            //找到逆序数的位置
+            if (arr[i-1]>arr[i]){
+                //判断实际数的位置
+                for (int j=0;j<i;j++){
+
+                    if (arr[j]>arr[i]){
+                        int temp= arr[i];
+                        //移动逆序的数据，确保顺序
+                        for (int k=i;k>j;k--){
+
+                            arr[k]= arr[k-1];
+
+                        }
+                        arr[j]=temp;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
     public static void main(String[] args){
 
         Sort sort= new Sort();
         int[] arr= {7,4,3,1,8,6,0,2,5};
 //        int[] res= sort.quiksort(arr);
 //        sort.selectSort(arr);
-        sort.bubblesort(arr);
+//        sort.bubblesort(arr);
+        sort.insertSort(arr);
         for (int i=0;i<arr.length;i++)
         {
             System.out.println(arr[i]);
